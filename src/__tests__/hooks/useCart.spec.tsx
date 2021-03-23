@@ -62,7 +62,7 @@ describe('useCart Hook', () => {
           price: 139.9,
           title: 'Tênis VR Caminhada Confortável Detalhes Couro Masculino',
         },
-      ])
+      ]),
     );
   });
 
@@ -117,11 +117,11 @@ describe('useCart Hook', () => {
           image:
             'https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/modulo-redux/tenis3.jpg',
         },
-      ])
+      ]),
     );
     expect(mockedSetItemLocalStorage).toHaveBeenCalledWith(
       '@RocketShoes:cart',
-      JSON.stringify(result.current.cart)
+      JSON.stringify(result.current.cart),
     );
   });
 
@@ -142,14 +142,14 @@ describe('useCart Hook', () => {
     await waitFor(
       () => {
         expect(mockedToastError).toHaveBeenCalledWith(
-          'Erro na adição do produto'
+          'Erro na adição do produto',
         );
         expect(result.current.cart).toEqual(
-          expect.arrayContaining(initialStoragedData)
+          expect.arrayContaining(initialStoragedData),
         );
         expect(mockedSetItemLocalStorage).not.toHaveBeenCalled();
       },
-      { timeout: 200 }
+      { timeout: 200 },
     );
   });
 
@@ -196,11 +196,11 @@ describe('useCart Hook', () => {
           price: 139.9,
           title: 'Tênis VR Caminhada Confortável Detalhes Couro Masculino',
         },
-      ])
+      ]),
     );
     expect(mockedSetItemLocalStorage).toHaveBeenCalledWith(
       '@RocketShoes:cart',
-      JSON.stringify(result.current.cart)
+      JSON.stringify(result.current.cart),
     );
   });
 
@@ -223,16 +223,16 @@ describe('useCart Hook', () => {
     await waitFor(
       () => {
         expect(mockedToastError).toHaveBeenCalledWith(
-          'Quantidade solicitada fora de estoque'
+          'Quantidade solicitada fora de estoque',
         );
         expect(result.current.cart).toEqual(
-          expect.arrayContaining(initialStoragedData)
+          expect.arrayContaining(initialStoragedData),
         );
         expect(mockedSetItemLocalStorage).not.toHaveBeenCalled();
       },
       {
         timeout: 200,
-      }
+      },
     );
   });
 
@@ -257,11 +257,11 @@ describe('useCart Hook', () => {
           price: 179.9,
           title: 'Tênis de Caminhada Leve Confortável',
         },
-      ])
+      ]),
     );
     expect(mockedSetItemLocalStorage).toHaveBeenCalledWith(
       '@RocketShoes:cart',
-      JSON.stringify(result.current.cart)
+      JSON.stringify(result.current.cart),
     );
   });
 
@@ -278,7 +278,7 @@ describe('useCart Hook', () => {
 
     expect(mockedToastError).toHaveBeenCalledWith('Erro na remoção do produto');
     expect(result.current.cart).toEqual(
-      expect.arrayContaining(initialStoragedData)
+      expect.arrayContaining(initialStoragedData),
     );
     expect(mockedSetItemLocalStorage).not.toHaveBeenCalled();
   });
@@ -319,11 +319,11 @@ describe('useCart Hook', () => {
           price: 139.9,
           title: 'Tênis VR Caminhada Confortável Detalhes Couro Masculino',
         },
-      ])
+      ]),
     );
     expect(mockedSetItemLocalStorage).toHaveBeenCalledWith(
       '@RocketShoes:cart',
-      JSON.stringify(result.current.cart)
+      JSON.stringify(result.current.cart),
     );
   });
 
@@ -343,14 +343,14 @@ describe('useCart Hook', () => {
     await waitFor(
       () => {
         expect(mockedToastError).toHaveBeenCalledWith(
-          'Erro na alteração de quantidade do produto'
+          'Erro na alteração de quantidade do produto',
         );
         expect(result.current.cart).toEqual(
-          expect.arrayContaining(initialStoragedData)
+          expect.arrayContaining(initialStoragedData),
         );
         expect(mockedSetItemLocalStorage).not.toHaveBeenCalled();
       },
-      { timeout: 200 }
+      { timeout: 200 },
     );
   });
 
@@ -373,14 +373,14 @@ describe('useCart Hook', () => {
     await waitFor(
       () => {
         expect(mockedToastError).toHaveBeenCalledWith(
-          'Quantidade solicitada fora de estoque'
+          'Quantidade solicitada fora de estoque',
         );
         expect(result.current.cart).toEqual(
-          expect.arrayContaining(initialStoragedData)
+          expect.arrayContaining(initialStoragedData),
         );
         expect(mockedSetItemLocalStorage).not.toHaveBeenCalled();
       },
-      { timeout: 200 }
+      { timeout: 200 },
     );
   });
 
@@ -405,15 +405,15 @@ describe('useCart Hook', () => {
         () => {
           return result.current.cart;
         },
-        { timeout: 50 }
+        { timeout: 50 },
       );
       expect(result.current.cart).toEqual(
-        expect.arrayContaining(initialStoragedData)
+        expect.arrayContaining(initialStoragedData),
       );
       expect(mockedSetItemLocalStorage).not.toHaveBeenCalled();
     } catch {
       expect(result.current.cart).toEqual(
-        expect.arrayContaining(initialStoragedData)
+        expect.arrayContaining(initialStoragedData),
       );
       expect(mockedSetItemLocalStorage).not.toHaveBeenCalled();
     }
